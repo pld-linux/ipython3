@@ -1,6 +1,4 @@
-
-%define pname IPython
-
+%define		pname	IPython
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
@@ -117,7 +115,7 @@ w wielu przypadkach.
 Pakiet ten zawiera modu³y interaktywnej pow³oki jêzyka Python.
 
 %prep
-%setup  -q -n %{pname}-%{version}
+%setup -q -n %{pname}-%{version}
 %patch0 -p1
 
 %install
