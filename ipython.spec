@@ -136,7 +136,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README doc/{ChangeLog,NEWS} doc/manual doc/*.pdf
 %dir %{py_sitescriptdir}/%{pname}
 %dir %{py_sitescriptdir}/%{pname}/Extensions
-%dir %{py_sitescriptdir}/%{pname}/UserConfig
 %{py_sitescriptdir}/%{pname}/*.py?
 %{py_sitescriptdir}/%{pname}/Extensions/*.py?
 %{py_sitescriptdir}/%{pname}/UserConfig
