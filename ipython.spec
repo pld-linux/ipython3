@@ -10,6 +10,7 @@ Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
+# Source0-md5:	56b72be6a054e1dea75f34c5e4326ae0
 URL:		http://www-hep.colorado.edu/~fperez/ipython/
 %pyrequires_eq	python
 Requires:	python-%{name} = %{version}
