@@ -5,8 +5,8 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
-Version:	0.2.8
-Release:	2
+Version:	0.2.10
+Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
