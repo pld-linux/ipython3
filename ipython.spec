@@ -126,8 +126,6 @@ python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 mv doc/manual/manual.pdf doc/
 mv doc/manual/ doc/html/
 
-gzip -9nf *.txt doc/{*.txt,ChangeLog,ToDo,BUGS}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -137,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python-ipython
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz doc/html doc/*.pdf
+%doc *.txt doc/{*.txt,ChangeLog,ToDo,BUGS} doc/html doc/*.pdf
 %dir %{py_sitedir}/%{pname}
 %dir %{py_sitedir}/%{pname}/Extensions
 %dir %{py_sitedir}/%{pname}/UserConfig
