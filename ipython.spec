@@ -5,12 +5,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
-Version:	0.5.0
-Release:	3
+Version:	0.6.0
+Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{pname}-%{version}.tar.gz
-# Source0-md5:	134ccdb03a4094f991def74230137b21
+# Source0-md5:	75fdfecda3b313a43a8b8af4dc74ca37
 Patch0:		%{name}-import_path.patch
 URL:		http://ipython.scipy.org
 %pyrequires_eq	python
@@ -137,9 +137,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-ipython
 %defattr(644,root,root,755)
 %doc README doc/{ChangeLog,NEWS} doc/manual doc/*.pdf
-%dir %{py_sitedir}/%{pname}
-%dir %{py_sitedir}/%{pname}/Extensions
-%dir %{py_sitedir}/%{pname}/UserConfig
-%{py_sitedir}/%{pname}/*.py?
-%{py_sitedir}/%{pname}/Extensions/*.py?
-%{py_sitedir}/%{pname}/UserConfig
+%dir %{py_sitescriptdir}/%{pname}
+%dir %{py_sitescriptdir}/%{pname}/Extensions
+%dir %{py_sitescriptdir}/%{pname}/UserConfig
+%{py_sitescriptdir}/%{pname}/*.py?
+%{py_sitescriptdir}/%{pname}/Extensions/*.py?
+%{py_sitescriptdir}/%{pname}/UserConfig
