@@ -48,7 +48,7 @@ dostarczanej z jêzykiem Python. IPython umo¿liwia badanie obiektów,
 dostêp do pow³oki oraz w³asny system poleceñ, który umo¿liwia
 rozszerzanie funkcjonalno¶ci podczas pracy interaktywnej.
 
-2. Dostarczenie gotowego interpertera, który mo¿na do³±czaæ do w³asnej
+2. Dostarczenie gotowego interpretera, który mo¿na do³±czaæ do w³asnej
 aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
 funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp do
 aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
@@ -100,7 +100,7 @@ dostarczanej z jêzykiem Python. IPython umo¿liwia badanie obiektów,
 dostêp do pow³oki oraz w³asny system poleceñ, który umo¿liwia
 rozszerzanie funkcjonalno¶ci podczas pracy interaktywnej.
 
-2. Dostarczenie gotowego interpertera, który mo¿na do³±czaæ do w³asnej
+2. Dostarczenie gotowego interpretera, który mo¿na do³±czaæ do w³asnej
 aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
 funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp do
 aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
