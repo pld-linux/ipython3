@@ -11,7 +11,7 @@ License:	LGPL
 Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
 URL:		http://www-hep.colorado.edu/~fperez/ipython/
-%requires_eq	python
+%pyrequires_eq	python
 Requires:	python-%{name} = %{version}
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
 BuildRequires:  python-devel
@@ -67,8 +67,8 @@ Pakiet ten zawiera pow³okê IPython.
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl):	Modu³y interaktywnej pow³oki jêzyka Python
 Group:		Libraries/Python
-%requires_eq	python-modules
-%requires_eq	python-pydoc
+%pyrequires_eq	python-modules
+%pyrequires_eq	python-pydoc
 
 %description -n python-ipython
 IPython is a free software project which tries to:
