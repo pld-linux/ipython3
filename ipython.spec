@@ -2,7 +2,7 @@
 
 #
 # todo:
-# 2. %{py_sitedir}/%{pname}/UserConfig/*.py ???
+# 1. review pl descriptions
 #
 
 %define pname IPython
@@ -11,7 +11,7 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
 Version:	0.2.8
-Release:	0.3
+Release:	0.4
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
@@ -145,4 +145,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitedir}/%{pname}/UserConfig
 %{py_sitedir}/%{pname}/*.py?
 %{py_sitedir}/%{pname}/Extensions/*.py?
+
+# leave it as source because files below will be installed in ~/.ipython
+# when IPython is _imported_ (it is the reason why UserConfig is not in
+# main package) first time
 %{py_sitedir}/%{pname}/UserConfig/*.py
