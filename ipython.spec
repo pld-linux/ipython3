@@ -6,7 +6,7 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
 Version:	0.5.0
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{pname}-%{version}.tar.gz
@@ -69,7 +69,7 @@ Pakiet ten zawiera pow³okê IPython.
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl):	Modu³y interaktywnej pow³oki jêzyka Python
 Group:		Libraries/Python
-%pyrequires_eq	python-modules
+%pyrequires_eq	python-devel-tools
 %pyrequires_eq	pydoc
 
 %description -n python-ipython
