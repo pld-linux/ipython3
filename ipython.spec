@@ -14,7 +14,7 @@ URL:		http://www-hep.colorado.edu/~fperez/ipython/
 %pyrequires_eq	python
 Requires:	python-%{name} = %{version}
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
-BuildRequires:  python-devel
+BuildRequires:	python-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
