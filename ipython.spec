@@ -1,17 +1,12 @@
 %include	/usr/lib/rpm/macros.python
 
-#
-# todo:
-# 1. review pl descriptions
-#
-
 %define pname IPython
 
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
 Version:	0.2.8
-Release:	0.4
+Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
@@ -46,22 +41,23 @@ This package contains IPython shell.
 %description -l pl
 IPython jest wolnym oprogramowaniem, którego celem jest:
 
-1. Dostarczenie interaktywnej pow³oki lepszej od standardowej jêzyka
-Python. IPython ma wiele cech takich jak badanie obiektów, dostêp do
-pow³oki oraz w³asny system poleceñ, który umo¿liwia rozszerzanie
-funkcjonalno¶ci podczas pracy interaktywnej.
+1. Dostarczenie interaktywnej pow³oki lepszej od standardowej
+dostarczanej z jêzykiem Python. IPython umo¿liwia badanie obiektów,
+dostêp do pow³oki oraz w³asny system poleceñ, który umo¿liwia
+rozszerzanie funkcjonalno¶ci podczas pracy interaktywnej.
 
 2. Dostarczenie gotowego interpertera, który mo¿na do³±czaæ do w³asnej
 aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
 funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp do
 aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
 do celów takich jak ¶ledzenie programu czy te¿ sytuacji gdzie jest
-wymagane po³±czenie przetwarzania wsadowego z interaktywnym badaniem.
+wymagane po³±czenie przetwarzania wsadowego z interaktywn±
+introspekcj±.
 
 3. Dostarczenie szkieletu, który mo¿e zostaæ u¿yty jako podstawa
 systemu, którego polecenia opieraj± siê na zasadach jêzyka Python.
 Projekt zosta³ zainspirowany przez oprogramowanie naukowe takie jak
-Mathematic, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
+Mathematica, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
 w wielu przypadkach.
 
 Pakiet ten zawiera pow³okê IPython.
@@ -97,22 +93,23 @@ This package contains IPython modules.
 %description -n python-ipython -l pl
 IPython jest wolnym oprogramowaniem, którego celem jest:
 
-1. Dostarczenie interaktywnej pow³oki lepszej od standardowej jêzyka
-Python. IPython ma wiele cech takich jak badanie obiektów, dostêp do
-pow³oki oraz w³asny system poleceñ, który umo¿liwia rozszerzanie
-funkcjonalno¶ci podczas pracy interaktywnej.
+1. Dostarczenie interaktywnej pow³oki lepszej od standardowej
+dostarczanej z jêzykiem Python. IPython umo¿liwia badanie obiektów,
+dostêp do pow³oki oraz w³asny system poleceñ, który umo¿liwia
+rozszerzanie funkcjonalno¶ci podczas pracy interaktywnej.
 
 2. Dostarczenie gotowego interpertera, który mo¿na do³±czaæ do w³asnej
 aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
 funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp do
 aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
 do celów takich jak ¶ledzenie programu czy te¿ sytuacji gdzie jest
-wymagane po³±czenie przetwarzania wsadowego z interaktywnym badaniem.
+wymagane po³±czenie przetwarzania wsadowego z interaktywn±
+introspekcj±.
 
 3. Dostarczenie szkieletu, który mo¿e zostaæ u¿yty jako podstawa
 systemu, którego polecenia opieraj± siê na zasadach jêzyka Python.
 Projekt zosta³ zainspirowany przez oprogramowanie naukowe takie jak
-Mathematic, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
+Mathematica, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
 w wielu przypadkach.
 
 Pakiet ten zawiera modu³y interaktywnej pow³oki jêzyka Python.
