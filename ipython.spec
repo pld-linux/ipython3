@@ -69,7 +69,7 @@ Summary:	An enhanced Interactive Python shell modules
 Summary(pl):	Modu³y interaktywnej pow³oki jêzyka Python
 Group:		Libraries/Python
 %pyrequires_eq	python-modules
-%pyrequires_eq	python-pydoc
+%pyrequires_eq	pydoc
 
 %description -n python-ipython
 IPython is a free software project which tries to:
