@@ -2,12 +2,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
-Version:	0.6.3
+Version:	0.6.4
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
-Source0:	http://ipython.scipy.org/dist/%{pname}-%{version}.tar.gz
-# Source0-md5:	278477ed2da0708f3eae1ecb402f3b56
+Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	14261f8f921d6b35e343c2910bb6a974
 Patch0:		%{name}-import_path.patch
 URL:		http://ipython.scipy.org
 %pyrequires_eq	python
@@ -115,7 +115,7 @@ w wielu przypadkach.
 Pakiet ten zawiera modu³y interaktywnej pow³oki jêzyka Python.
 
 %prep
-%setup -q -n %{pname}-%{version}
+%setup -q
 %patch0 -p1
 
 %install
@@ -129,6 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%exclude %{_bindir}/*.orig
 %{_mandir}/man1/*
 
 %files -n python-ipython
