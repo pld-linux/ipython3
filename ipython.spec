@@ -12,7 +12,6 @@ Patch0:		%{name}-import_path.patch
 URL:		http://ipython.scipy.org
 %pyrequires_eq	python
 Requires:	python-%{name} = %{version}
-BuildRequires:	rpm-pythonprov >= 4.0.2-50
 BuildRequires:	python-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
