@@ -4,6 +4,8 @@
 # todo:
 # 1. pl description
 # 2. %{py_sitedir}/%{pname}/UserConfig/*.py ???
+# 3. python-ipython subpackage with all modules
+#    - main package will contain only the script to run shell (maybe some docs)
 #
 
 %define pname IPython
@@ -14,7 +16,7 @@ Name:		ipython
 Version:	0.2.8
 Release:	0.1
 License:	LGPL
-Group:		Development/Tools
+Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
 URL:		http://www-hep.colorado.edu/~fperez/ipython/
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
