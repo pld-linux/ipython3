@@ -2,10 +2,7 @@
 
 #
 # todo:
-# 1. pl description
 # 2. %{py_sitedir}/%{pname}/UserConfig/*.py ???
-# 3. python-ipython subpackage with all modules
-#    - main package will contain only the script to run shell (maybe some docs)
 #
 
 %define pname IPython
@@ -14,14 +11,14 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
 Version:	0.2.8
-Release:	0.1
+Release:	0.2
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
 URL:		http://www-hep.colorado.edu/~fperez/ipython/
+%requires_eq	python
+Requires:	python-%{name} = %{version}
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
-%requires_eq	python-modules
-%requires_eq	python-pydoc
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,6 +40,58 @@ IPython is a free software project which tries to:
    environments like Mathematica, IDL and Mathcad inspired its design, but similar
    ideas can be useful in many fields.
 
+This package contains IPython shell.
+
+%description -l pl
+IPython jest wolnym oprogramowaniem, którego celem jest:
+
+1. Dostarczenie interaktywnej pow³oki lepszej od standardowej jêzyka
+Python. IPython ma wiele cech takich jak badanie obiektów, dostêp
+do pow³oki oraz w³asny system poleceñ, który umo¿liwia rozszerzanie
+funkcjonalno¶ci podczas pracy interaktywnej.
+
+2. Dostarczenie gotowego interpertera, który mo¿na do³±czaæ do w³asnej
+aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
+funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp
+do aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
+do celów takich jak ¶ledzenie programu czy te¿ sytuacji gdzie jest 
+wymagane po³±czenie przetwarzania wsadowego z interaktywnym badaniem.
+
+3. Dostarczenie szkieletu, który mo¿e zostaæ u¿yty jako podstawa
+systemu, którego polecenia opieraj± siê na zasadach jêzyka Python.
+Projekt zosta³ zainspirowany przez oprogramowanie naukowe takie jak
+Mathematic, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
+w wielu przypadkach.
+
+Pakiet ten zawiera pow³okê IPython.
+
+%package -n python-ipython
+Summary:	An enhanced Interactive Python shell modules
+Summary(pl):	Modu³y interaktywnej pow³oki jêzyka Python
+Group:		Libraries/Python
+%requires_eq	python-modules
+%requires_eq	python-pydoc
+
+%description -n python-ipython
+IPython is a free software project which tries to:
+
+1. Provide an interactive interpreter superior to Python's default. IPython has
+   many features for object introspection, shell access, and its own special
+   command system for adding functionality when working interactively.
+
+2. Serve as an embeddable, ready to use interpreter for your own programs.
+   IPython can be started with a single call from inside another program,
+   providing access to the current namespace. This can be very useful both for
+   debugging purposes and for situations where a blend of batch-processing and
+   interactive exploration are needed.
+
+3. Offer a flexible framework which can be used as the base environment for
+   other systems with Python as the underlying language. Specifically scientific
+   environments like Mathematica, IDL and Mathcad inspired its design, but similar
+   ideas can be useful in many fields.
+
+This package contains IPython modules.
+
 %prep
 %setup  -q -n %{pname}-%{version}
 
@@ -61,8 +110,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz doc/html doc/*.pdf
 %attr(755,root,root) %{_bindir}/*
+
+%files -n python-ipython
+%defattr(644,root,root,755)
+%doc *.gz doc/*.gz doc/html doc/*.pdf
 %dir %{py_sitedir}/%{pname}
 %dir %{py_sitedir}/%{pname}/Extensions
 %dir %{py_sitedir}/%{pname}/UserConfig
