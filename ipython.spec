@@ -5,13 +5,13 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
-Version:	0.2.10
+Version:	0.5.0
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
-Source0:	http://www-hep.colorado.edu/~fperez/ipython/dist/%{pname}-%{version}.tar.gz
-# Source0-md5:	56b72be6a054e1dea75f34c5e4326ae0
-URL:		http://www-hep.colorado.edu/~fperez/ipython/
+Source0:	http://ipython.scipy.org/dist/%{pname}-%{version}.tar.gz
+# Source0-md5:	134ccdb03a4094f991def74230137b21
+URL:		http://ipython.scipy.org
 %pyrequires_eq	python
 Requires:	python-%{name} = %{version}
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
@@ -124,26 +124,20 @@ rm -rf $RPM_BUILD_ROOT
 
 python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
-mv doc/manual/manual.pdf doc/
-mv doc/manual/ doc/html/
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 
 %files -n python-ipython
 %defattr(644,root,root,755)
-%doc *.txt doc/{*.txt,ChangeLog,ToDo,BUGS} doc/html doc/*.pdf
+%doc README doc/{ChangeLog,NEWS} doc/manual doc/*.pdf
 %dir %{py_sitedir}/%{pname}
 %dir %{py_sitedir}/%{pname}/Extensions
 %dir %{py_sitedir}/%{pname}/UserConfig
 %{py_sitedir}/%{pname}/*.py?
 %{py_sitedir}/%{pname}/Extensions/*.py?
-
-# leave it as source because files below will be installed in ~/.ipython
-# when IPython is _imported_ (it is the reason why UserConfig is not in
-# main package) first time
-%{py_sitedir}/%{pname}/UserConfig/*.py
+%{py_sitedir}/%{pname}/UserConfig
