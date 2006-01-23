@@ -10,9 +10,10 @@ Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	3be8bae6c7c2153b6e57d3214c52c841
 Patch0:		%{name}-import_path.patch
 URL:		http://ipython.scipy.org
-%pyrequires_eq	python
-Requires:	python-%{name} = %{version}
 BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	python-%{name} = %{version}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -122,6 +123,9 @@ rm -rf $RPM_BUILD_ROOT
 
 python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
+%py_postclean
+rm -rf $RPM_BUILD_ROOT%{_docdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -133,8 +137,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-ipython
 %defattr(644,root,root,755)
 %doc README doc/{ChangeLog,NEWS} doc/manual doc/*.pdf
-%dir %{py_sitescriptdir}/%{pname}
-%dir %{py_sitescriptdir}/%{pname}/Extensions
-%{py_sitescriptdir}/%{pname}/*.py?
-%{py_sitescriptdir}/%{pname}/Extensions/*.py?
-%{py_sitescriptdir}/%{pname}/UserConfig
+%{py_sitescriptdir}/%{pname}
