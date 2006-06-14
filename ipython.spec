@@ -2,12 +2,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl):	Interaktywna pow³oka jêzyka Python
 Name:		ipython
-Version:	0.7.1
+Version:	0.7.2
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	ee810623a4027bfadaf8c41d4f2ec927
+# Source0-md5:	3565efcf87c7318c1a3930e278ac9fa5
 Patch0:		%{name}-import_path.patch
 URL:		http://ipython.scipy.org
 BuildRequires:	python-devel
