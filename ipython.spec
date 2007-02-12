@@ -1,6 +1,6 @@
 %define		pname	IPython
 Summary:	An enhanced Interactive Python shell
-Summary(pl):	Interaktywna pow³oka jêzyka Python
+Summary(pl.UTF-8):   Interaktywna powÅ‚oka jÄ™zyka Python
 Name:		ipython
 Version:	0.7.2
 Release:	3
@@ -38,33 +38,33 @@ inspired its design, but similar ideas can be useful in many fields.
 
 This package contains IPython shell.
 
-%description -l pl
-IPython jest wolnym oprogramowaniem, którego celem jest:
+%description -l pl.UTF-8
+IPython jest wolnym oprogramowaniem, ktÃ³rego celem jest:
 
-1. Dostarczenie interaktywnej pow³oki lepszej od standardowej
-dostarczanej z jêzykiem Python. IPython umo¿liwia badanie obiektów,
-dostêp do pow³oki oraz w³asny system poleceñ, który umo¿liwia
-rozszerzanie funkcjonalno¶ci podczas pracy interaktywnej.
+1. Dostarczenie interaktywnej powÅ‚oki lepszej od standardowej
+dostarczanej z jÄ™zykiem Python. IPython umoÅ¼liwia badanie obiektÃ³w,
+dostÄ™p do powÅ‚oki oraz wÅ‚asny system poleceÅ„, ktÃ³ry umoÅ¼liwia
+rozszerzanie funkcjonalnoÅ›ci podczas pracy interaktywnej.
 
-2. Dostarczenie gotowego interpretera, który mo¿na do³±czaæ do w³asnej
-aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
-funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp do
-aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
-do celów takich jak ¶ledzenie programu czy te¿ sytuacji gdzie jest
-wymagane po³±czenie przetwarzania wsadowego z interaktywn±
-introspekcj±.
+2. Dostarczenie gotowego interpretera, ktÃ³ry moÅ¼na doÅ‚Ä…czaÄ‡ do wÅ‚asnej
+aplikacji. IPython moÅ¼e zostaÄ‡ uruchomiony za pomocÄ… wywoÅ‚ania jednej
+funkcji z poziomu innego programu umoÅ¼liwiajÄ…c jednoczeÅ›nie dostÄ™p do
+aktualnej przestrzeni nazw tego programu. MoÅ¼e to byÄ‡ bardzo uÅ¼yteczne
+do celÃ³w takich jak Å›ledzenie programu czy teÅ¼ sytuacji gdzie jest
+wymagane poÅ‚Ä…czenie przetwarzania wsadowego z interaktywnÄ…
+introspekcjÄ….
 
-3. Dostarczenie szkieletu, który mo¿e zostaæ u¿yty jako podstawa
-systemu, którego polecenia opieraj± siê na zasadach jêzyka Python.
-Projekt zosta³ zainspirowany przez oprogramowanie naukowe takie jak
-Mathematica, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
+3. Dostarczenie szkieletu, ktÃ³ry moÅ¼e zostaÄ‡ uÅ¼yty jako podstawa
+systemu, ktÃ³rego polecenia opierajÄ… siÄ™ na zasadach jÄ™zyka Python.
+Projekt zostaÅ‚ zainspirowany przez oprogramowanie naukowe takie jak
+Mathematica, IDL oraz Mathcad, gdzie podobne idee mogÄ… byÄ‡ realizowane
 w wielu przypadkach.
 
-Pakiet ten zawiera pow³okê IPython.
+Pakiet ten zawiera powÅ‚okÄ™ IPython.
 
 %package -n python-ipython
 Summary:	An enhanced Interactive Python shell modules
-Summary(pl):	Modu³y interaktywnej pow³oki jêzyka Python
+Summary(pl.UTF-8):   ModuÅ‚y interaktywnej powÅ‚oki jÄ™zyka Python
 Group:		Libraries/Python
 %pyrequires_eq	python-devel-tools
 %pyrequires_eq	pydoc
@@ -90,29 +90,29 @@ inspired its design, but similar ideas can be useful in many fields.
 
 This package contains IPython modules.
 
-%description -n python-ipython -l pl
-IPython jest wolnym oprogramowaniem, którego celem jest:
+%description -n python-ipython -l pl.UTF-8
+IPython jest wolnym oprogramowaniem, ktÃ³rego celem jest:
 
-1. Dostarczenie interaktywnej pow³oki lepszej od standardowej
-dostarczanej z jêzykiem Python. IPython umo¿liwia badanie obiektów,
-dostêp do pow³oki oraz w³asny system poleceñ, który umo¿liwia
-rozszerzanie funkcjonalno¶ci podczas pracy interaktywnej.
+1. Dostarczenie interaktywnej powÅ‚oki lepszej od standardowej
+dostarczanej z jÄ™zykiem Python. IPython umoÅ¼liwia badanie obiektÃ³w,
+dostÄ™p do powÅ‚oki oraz wÅ‚asny system poleceÅ„, ktÃ³ry umoÅ¼liwia
+rozszerzanie funkcjonalnoÅ›ci podczas pracy interaktywnej.
 
-2. Dostarczenie gotowego interpretera, który mo¿na do³±czaæ do w³asnej
-aplikacji. IPython mo¿e zostaæ uruchomiony za pomoc± wywo³ania jednej
-funkcji z poziomu innego programu umo¿liwiaj±c jednocze¶nie dostêp do
-aktualnej przestrzeni nazw tego programu. Mo¿e to byæ bardzo u¿yteczne
-do celów takich jak ¶ledzenie programu czy te¿ sytuacji gdzie jest
-wymagane po³±czenie przetwarzania wsadowego z interaktywn±
-introspekcj±.
+2. Dostarczenie gotowego interpretera, ktÃ³ry moÅ¼na doÅ‚Ä…czaÄ‡ do wÅ‚asnej
+aplikacji. IPython moÅ¼e zostaÄ‡ uruchomiony za pomocÄ… wywoÅ‚ania jednej
+funkcji z poziomu innego programu umoÅ¼liwiajÄ…c jednoczeÅ›nie dostÄ™p do
+aktualnej przestrzeni nazw tego programu. MoÅ¼e to byÄ‡ bardzo uÅ¼yteczne
+do celÃ³w takich jak Å›ledzenie programu czy teÅ¼ sytuacji gdzie jest
+wymagane poÅ‚Ä…czenie przetwarzania wsadowego z interaktywnÄ…
+introspekcjÄ….
 
-3. Dostarczenie szkieletu, który mo¿e zostaæ u¿yty jako podstawa
-systemu, którego polecenia opieraj± siê na zasadach jêzyka Python.
-Projekt zosta³ zainspirowany przez oprogramowanie naukowe takie jak
-Mathematica, IDL oraz Mathcad, gdzie podobne idee mog± byæ realizowane
+3. Dostarczenie szkieletu, ktÃ³ry moÅ¼e zostaÄ‡ uÅ¼yty jako podstawa
+systemu, ktÃ³rego polecenia opierajÄ… siÄ™ na zasadach jÄ™zyka Python.
+Projekt zostaÅ‚ zainspirowany przez oprogramowanie naukowe takie jak
+Mathematica, IDL oraz Mathcad, gdzie podobne idee mogÄ… byÄ‡ realizowane
 w wielu przypadkach.
 
-Pakiet ten zawiera modu³y interaktywnej pow³oki jêzyka Python.
+Pakiet ten zawiera moduÅ‚y interaktywnej powÅ‚oki jÄ™zyka Python.
 
 %prep
 %setup -q
