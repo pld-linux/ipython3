@@ -1,6 +1,6 @@
 %define		pname	IPython
 Summary:	An enhanced Interactive Python shell
-Summary(pl.UTF-8):   Interaktywna powłoka języka Python
+Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
 Version:	0.7.2
 Release:	3
@@ -64,7 +64,7 @@ Pakiet ten zawiera powłokę IPython.
 
 %package -n python-ipython
 Summary:	An enhanced Interactive Python shell modules
-Summary(pl.UTF-8):   Moduły interaktywnej powłoki języka Python
+Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
 %pyrequires_eq	python-devel-tools
 %pyrequires_eq	pydoc
