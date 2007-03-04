@@ -2,13 +2,14 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
-Version:	0.7.2
-Release:	3
+Version:	0.7.3
+Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	3565efcf87c7318c1a3930e278ac9fa5
+# Source0-md5:	40cbc814b812f2c3d6c13b47d41a6cc5
 Patch0:		%{name}-import_path.patch
+Patch1:		%{name}-upgrade.patch
 URL:		http://ipython.scipy.org
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
@@ -117,6 +118,7 @@ Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -136,5 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python-ipython
 %defattr(644,root,root,755)
-%doc README doc/{ChangeLog,NEWS} doc/manual doc/*.pdf
+%doc README doc/ChangeLog doc/manual doc/*.pdf
 %{py_sitescriptdir}/%{pname}
+%{py_sitescriptdir}/*.egg-info
