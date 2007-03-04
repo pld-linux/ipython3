@@ -1,0 +1,11 @@
+--- ipython-0.7.3/IPython/Magic.py.orig	2007-03-04 17:30:37.000000000 +0000
++++ ipython-0.7.3/IPython/Magic.py	2007-03-04 17:30:40.000000000 +0000
+@@ -3050,7 +3050,7 @@
+         """
+         ip = self.getapi()
+         ipinstallation = path(IPython.__file__).dirname()
+-        upgrade_script = '%s "%s"' % (sys.executable,ipinstallation / 'upgrade_dir.py')
++        upgrade_script = '%s "%s"' % (sys.executable,ipinstallation / 'upgrade_dir.pyc')
+         src_config = ipinstallation / 'UserConfig'
+         userdir = path(ip.options.ipythondir)
+         cmd = '%s "%s" "%s"' % (upgrade_script, src_config, userdir)
