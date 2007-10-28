@@ -2,12 +2,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
-Version:	0.8.0
+Version:	0.8.1
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	2ea4e280d74f1ea72830cd7a37a520bb
+# Source0-md5:	3479262a4bab21246ff07a06bbbd7bcb
 Patch0:		%{name}-import_path.patch
 Patch1:		%{name}-upgrade.patch
 URL:		http://ipython.scipy.org
