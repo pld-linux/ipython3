@@ -2,16 +2,18 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
-Version:	0.8.2
+Version:	0.8.4
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	fd5a1b6e518898a4aee8b8d8b428af70
+# Source0-md5:	9b8b439d295defa694b9fbf799203680
 Patch0:		%{name}-import_path.patch
 Patch1:		%{name}-upgrade.patch
 URL:		http://ipython.scipy.org
+BuildRequires:	pydoc
 BuildRequires:	python-devel
+BuildRequires:	python-devel-tools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-%{name} = %{version}-%{release}
@@ -138,6 +140,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python-ipython
 %defattr(644,root,root,755)
-%doc README doc/ChangeLog doc/manual doc/*.pdf
+%doc README doc/ChangeLog doc/manual
 %{py_sitescriptdir}/%{pname}
 %{py_sitescriptdir}/*.egg-info
