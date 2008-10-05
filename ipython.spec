@@ -1,13 +1,16 @@
+# TODO:
+# - check docs folder for valuable files
+#
 %define		pname	IPython
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
-Version:	0.8.4
+Version:	0.9.1
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	9b8b439d295defa694b9fbf799203680
+# Source0-md5:	8a1bd1a9be272f4ddf4de99e5c1ad0dc
 Patch0:		%{name}-import_path.patch
 Patch1:		%{name}-upgrade.patch
 URL:		http://ipython.scipy.org
@@ -140,6 +143,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python-ipython
 %defattr(644,root,root,755)
-%doc README doc/ChangeLog doc/manual
+%doc README.txt docs/dist/*.pdf docs/dist/html
 %{py_sitescriptdir}/%{pname}
 %{py_sitescriptdir}/*.egg-info
