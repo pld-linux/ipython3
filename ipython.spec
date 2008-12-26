@@ -6,7 +6,7 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
 Version:	0.9.1
-Release:	1
+Release:	1.9
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://ipython.scipy.org/dist/%{name}-%{version}.tar.gz
