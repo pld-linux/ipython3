@@ -5,18 +5,17 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
-Version:	0.10.2
+Version:	0.11
 Release:	1
 License:	LGPL
 Group:		Applications/Shells
-Source0:	http://ipython.scipy.org/dist/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	dda59bfc6e256ce786c4bc4aadb220a4
-Patch0:		%{name}-import_path.patch
-Patch1:		%{name}-upgrade.patch
-URL:		http://ipython.scipy.org
+Source0:	http://archive.ipython.org/release/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	efc899e752a4a4a67a99575cea1719ef
+URL:		http://ipython.org
 BuildRequires:	pydoc
 BuildRequires:	python-devel
 BuildRequires:	python-devel-tools
+BuildRequires:	python-modules-sqlite
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-%{name} = %{version}-%{release}
@@ -122,8 +121,6 @@ Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -143,6 +140,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python-ipython
 %defattr(644,root,root,755)
-%doc README.txt docs/dist/*.pdf docs/dist/html
+%doc docs/README.txt docs/html
 %{py_sitescriptdir}/%{pname}
 %{py_sitescriptdir}/*.egg-info
