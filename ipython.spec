@@ -11,6 +11,7 @@ License:	LGPL
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	efc899e752a4a4a67a99575cea1719ef
+Patch0:		%{name}-zmq_detection.patch
 URL:		http://ipython.org
 BuildRequires:	pydoc
 BuildRequires:	python-devel
@@ -19,6 +20,7 @@ BuildRequires:	python-modules-sqlite
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-%{name} = %{version}-%{release}
+Suggests:	python-pyzmq
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -121,6 +123,7 @@ Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
