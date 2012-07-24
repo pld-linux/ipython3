@@ -4,12 +4,12 @@
 %define		pname	IPython
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
-Name:		ipython
+Name:		ipython3
 Version:	0.13
-Release:	0.1
+Release:	0.2
 License:	LGPL
 Group:		Applications/Shells
-Source0:	http://archive.ipython.org/release/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
 # Source0-md5:	490ccc2da9d6de9c37c7df05c1197ac5
 Patch0:		%{name}-bug-2057.patch
 URL:		http://ipython.org
@@ -137,7 +137,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-#%{_mandir}/man1/*
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
