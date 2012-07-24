@@ -5,22 +5,21 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython
-Version:	0.11
-Release:	1
+Version:	0.13
+Release:	0.1
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	efc899e752a4a4a67a99575cea1719ef
-Patch0:		%{name}-zmq_detection.patch
+# Source0-md5:	490ccc2da9d6de9c37c7df05c1197ac5
+Patch0:		%{name}-bug-2057.patch
 URL:		http://ipython.org
-BuildRequires:	pydoc
-BuildRequires:	python-devel
-BuildRequires:	python-devel-tools
-BuildRequires:	python-modules-sqlite
+BuildRequires:	pydoc3
+BuildRequires:	python3-devel
+BuildRequires:	python3-devel-tools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python-%{name} = %{version}-%{release}
-Suggests:	python-pyzmq
+Requires:	python3-%{name} = %{version}-%{release}
+Suggests:	python3-pyzmq
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -69,14 +68,14 @@ w wielu przypadkach.
 
 Pakiet ten zawiera powłokę IPython.
 
-%package -n python-ipython
+%package -n python3-ipython
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
-%pyrequires_eq	python-devel-tools
-%pyrequires_eq	pydoc
+%pyrequires_eq	python3-devel-tools
+%pyrequires_eq	pydoc3
 
-%description -n python-ipython
+%description -n python3-ipython
 IPython is a free software project which tries to:
 
 1. Provide an interactive interpreter superior to Python's default.
@@ -97,7 +96,7 @@ inspired its design, but similar ideas can be useful in many fields.
 
 This package contains IPython modules.
 
-%description -n python-ipython -l pl.UTF-8
+%description -n python3-ipython -l pl.UTF-8
 IPython jest wolnym oprogramowaniem, którego celem jest:
 
 1. Dostarczenie interaktywnej powłoki lepszej od standardowej
@@ -128,9 +127,8 @@ Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+python3 ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
-%py_postclean
 rm -rf $RPM_BUILD_ROOT%{_docdir}
 
 %clean
@@ -139,10 +137,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+#%{_mandir}/man1/*
 
-%files -n python-ipython
+%files -n python3-ipython
 %defattr(644,root,root,755)
-%doc docs/README.txt docs/html
-%{py_sitescriptdir}/%{pname}
-%{py_sitescriptdir}/*.egg-info
+%doc docs/README.txt
+%{py3_sitescriptdir}/%{pname}
+%{py3_sitescriptdir}/*.egg-info
