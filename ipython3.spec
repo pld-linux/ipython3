@@ -22,7 +22,7 @@ BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python3-%{mname} = %{version}-%{release}
 Suggests:	python3-pyzmq
 Suggests:	python3-rpy2
-Suggests:	tornado
+Suggests:	python3-tornado
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
