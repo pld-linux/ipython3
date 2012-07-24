@@ -2,6 +2,7 @@
 # - check docs folder for valuable files
 #
 %define		pname	IPython
+%define		mname	ipython
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
@@ -9,7 +10,7 @@ Version:	0.13
 Release:	0.2
 License:	LGPL
 Group:		Applications/Shells
-Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
+Source0:	http://archive.ipython.org/release/%{version}/%{mname}-%{version}.tar.gz
 # Source0-md5:	490ccc2da9d6de9c37c7df05c1197ac5
 Patch0:		%{name}-bug-2057.patch
 URL:		http://ipython.org
@@ -18,7 +19,7 @@ BuildRequires:	python3-devel
 BuildRequires:	python3-devel-tools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python3-%{name} = %{version}-%{release}
+Requires:	python3-%{mname} = %{version}-%{release}
 Suggests:	python3-pyzmq
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -121,7 +122,7 @@ w wielu przypadkach.
 Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 
 %prep
-%setup -q
+%setup -q -n %{mname}-%{version}
 %patch0 -p1
 
 %install
