@@ -20,7 +20,7 @@ BuildRequires:	python3-devel-tools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python3-%{mname} = %{version}-%{release}
-Suggests:	python3-pyzmq
+Suggests:	python3-zmq
 Suggests:	python3-rpy2
 Suggests:	python3-tornado
 BuildArch:	noarch
