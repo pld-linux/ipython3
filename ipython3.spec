@@ -7,7 +7,7 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
 Version:	0.13
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/%{mname}-%{version}.tar.gz
