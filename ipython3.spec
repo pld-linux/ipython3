@@ -20,6 +20,7 @@ BuildRequires:	python3-distribute
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python3-%{mname} = %{version}-%{release}
+Requires:	python3-distribute
 Suggests:	python3-zmq
 Suggests:	python3-rpy2
 Suggests:	python3-tornado
