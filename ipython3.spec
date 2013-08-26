@@ -6,12 +6,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	0.13.2
+Version:	1.0.0
 Release:	1
 License:	BSD
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/%{mname}-%{version}.tar.gz
-# Source0-md5:	ead3b7eb70c653b537fb9d96d71b8b2a
+# Source0-md5:	fcba21b5a3827bf4e6c921d04d984c2f
 URL:		http://ipython.org
 BuildRequires:	pydoc3
 BuildRequires:	python3-devel
@@ -149,6 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
-%doc docs/README.txt
+%doc docs/README.rst
 %{py3_sitescriptdir}/%{pname}
 %{py3_sitescriptdir}/*.egg-info
