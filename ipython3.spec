@@ -78,6 +78,7 @@ Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
 %pyrequires_eq	python3-devel-tools
 %pyrequires_eq	pydoc3
+Requires:	python3-jinja2
 
 %description -n python3-ipython
 IPython is a free software project which tries to:
