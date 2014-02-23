@@ -6,12 +6,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	1.0.0
+Version:	1.2.0
 Release:	1
 License:	BSD
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/%{mname}-%{version}.tar.gz
-# Source0-md5:	fcba21b5a3827bf4e6c921d04d984c2f
+# Source0-md5:	6b4cb02d5c48ca1776fb6127d37e9319
 URL:		http://ipython.org
 BuildRequires:	pydoc3
 BuildRequires:	python3-devel
