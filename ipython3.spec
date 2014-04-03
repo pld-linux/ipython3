@@ -6,12 +6,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	1.2.0
+Version:	2.0.0
 Release:	1
 License:	BSD
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/%{mname}-%{version}.tar.gz
-# Source0-md5:	6b4cb02d5c48ca1776fb6127d37e9319
+# Source0-md5:	dd209ff8c7b08565478e4fc04bdf33ee
 URL:		http://ipython.org
 BuildRequires:	pydoc3
 BuildRequires:	python3-devel
@@ -133,10 +133,6 @@ rm -rf $RPM_BUILD_ROOT
 
 python3 ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
-for p in ipcluster ipcontroller ipengine iplogger ipython irunner pycolor; do
-	mv $RPM_BUILD_ROOT%{_mandir}/man1/{$p.1,${p}3.1}
-done
-
 rm -rf $RPM_BUILD_ROOT%{_docdir}
 
 %clean
@@ -145,8 +141,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/i*3.1.gz
-%{_mandir}/man1/pycolor3.1.gz
+%{_mandir}/man1/i*.1.gz
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
