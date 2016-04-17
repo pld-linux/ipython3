@@ -11,7 +11,7 @@ Release:	2
 License:	BSD
 Group:		Applications/Shells
 Source0:	https://pypi.python.org/packages/source/i/ipython/%{mname}-%{version}.tar.gz
-# Source0-md5:	b3f00f3c0be036fafef3b0b9d663f27e
+# Source0-md5:	c2fecbcf1c0fbdc82625c77a50733dd6
 URL:		http://ipython.org
 BuildRequires:	pydoc3
 BuildRequires:	python3-devel
