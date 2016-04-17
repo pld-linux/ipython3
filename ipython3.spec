@@ -7,7 +7,7 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
 Version:	4.0.0
-Release:	2
+Release:	3
 License:	BSD
 Group:		Applications/Shells
 Source0:	https://pypi.python.org/packages/source/i/ipython/%{mname}-%{version}.tar.gz
@@ -131,7 +131,7 @@ Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python3 ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+%py3_install
 
 rm -rf $RPM_BUILD_ROOT%{_docdir}
 
