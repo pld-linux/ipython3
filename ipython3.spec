@@ -6,12 +6,13 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	4.0.0
-Release:	4
+Version:	5.3.0
+Release:	1
 License:	BSD
 Group:		Applications/Shells
-Source0:	https://pypi.python.org/packages/source/i/ipython/%{mname}-%{version}.tar.gz
-# Source0-md5:	c2fecbcf1c0fbdc82625c77a50733dd6
+# Source0:	https://pypi.python.org/packages/source/i/ipython/%{mname}-%{version}.tar.gz
+Source0:	https://github.com/ipython/ipython/archive/%{version}.tar.gz
+# Source0-md5:	30045499fa745e2f1893cadcba3f94c5
 URL:		http://ipython.org
 BuildRequires:	pydoc3
 BuildRequires:	python3-devel
@@ -20,10 +21,18 @@ BuildRequires:	python3-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python3-%{mname} = %{version}-%{release}
+Requires:	python3-ipython_genutils
+Requires:	python3-pexpect
+Requires:	python3-pickleshare
+Requires:	python3-prompt_toolkit
+Requires:	python3-ptyproces
+Requires:	python3-pygments
 Requires:	python3-setuptools
-Suggests:	python3-zmq
+Requires:	python3-simplegeneric
+Requires:	python3-traitlets
 Suggests:	python3-rpy2
 Suggests:	python3-tornado
+Suggests:	python3-zmq
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -76,8 +85,8 @@ Pakiet ten zawiera powłokę IPython.
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
-%pyrequires_eq	python3-devel-tools
-%pyrequires_eq	pydoc3
+Requires:	pydoc3
+Requires:	python3-devel-tools
 Requires:	python3-jinja2
 
 %description -n python3-ipython
@@ -141,7 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/i*.1.gz
+%{_mandir}/man1/i*.1*
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
