@@ -1,37 +1,54 @@
-# TODO:
-# - check docs folder for valuable files
 #
-%define		pname	IPython
-%define		mname	ipython
+# Conditional build:
+%bcond_with	doc	# Sphinx documentation (need to wait for fulfilling dependencies in PLD)
+%bcond_with	tests	# unit tests (need to wait for fulfilling dependencies in PLD)
+
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	5.3.0
-Release:	3
+Version:	5.8.0
+Release:	1
 License:	BSD
 Group:		Applications/Shells
-# Source0:	https://pypi.python.org/packages/source/i/ipython/%{mname}-%{version}.tar.gz
-Source0:	https://github.com/ipython/ipython/archive/%{version}.tar.gz
-# Source0-md5:	30045499fa745e2f1893cadcba3f94c5
-URL:		http://ipython.org
-BuildRequires:	pydoc3
-BuildRequires:	python3-devel
-BuildRequires:	python3-devel-tools
-BuildRequires:	python3-setuptools
+Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
+# Source0-md5:	7014b8824981eef2cb893ea5398d6b8d
+Patch0:		ipython-use-setuptools.patch
+URL:		http://ipython.org/
+BuildRequires:	pydoc3 >= 1:3.3
+BuildRequires:	python3-devel >= 1:3.3
+BuildRequires:	python3-devel-tools >= 1:3.3
+BuildRequires:	python3-setuptools >= 18.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python3-%{mname} = %{version}-%{release}
-Requires:	python3-ipython_genutils
-Requires:	python3-pexpect
-Requires:	python3-pickleshare
-Requires:	python3-prompt_toolkit
-Requires:	python3-ptyprocess
-Requires:	python3-pygments
-Requires:	python3-setuptools
-Requires:	python3-simplegeneric
-Requires:	python3-traitlets
-Suggests:	python3-rpy2
-Suggests:	python3-tornado
+BuildRequires:	rpmbuild(macros) >= 1.714
+%if %{with tests}
+BuildRequires:	python3-decorator
+BuildRequires:	python3-ipykernel
+BuildRequires:	python3-nbformat
+BuildRequires:	python3-nose >= 0.10.1
+%if "%{py3_ver}" >= "3.4"
+BuildRequires:	python3-numpy
+%endif
+%if "%{py3_ver}" < "3.4"
+BuildRequires:	python3-pathlib2
+%endif
+BuildRequires:	python3-pexpect
+BuildRequires:	python3-pickleshare
+BuildRequires:	python3-prompt_toolkit >= 1.0.4
+BuildRequires:	python3-prompt_toolkit < 2
+BuildRequires:	python3-pygments
+BuildRequires:	python3-requests
+BuildRequires:	python3-simplegeneric >= 0.8
+BuildRequires:	python3-testpath
+BuildRequires:	python3-traitlets >= 4.2
+%endif
+%if %{with doc}
+BuildRequires:	python3-docutils
+BuildRequires:	python3-ipykernel
+BuildRequires:	python3-sphinx_rtd_theme
+BuildRequires:	sphinx-pdg-3 >= 1.3
+%endif
+Requires:	python3-ipython = %{version}-%{release}
+Suggests:	python3-PyQt5
 Suggests:	python3-zmq
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -85,9 +102,8 @@ Pakiet ten zawiera powłokę IPython.
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
-Requires:	pydoc3
-Requires:	python3-devel-tools
-Requires:	python3-jinja2
+Requires:	pydoc3 >= 1:3.3
+Requires:	python3-devel-tools >= 1:3.3
 
 %description -n python3-ipython
 IPython is a free software project which tries to:
@@ -135,25 +151,46 @@ w wielu przypadkach.
 Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 
 %prep
-%setup -q -n %{mname}-%{version}
+%setup -q -n ipython-%{version}
+%patch0 -p1
+
+%build
+%py3_build
+
+%if %{with tests}
+%{__python3} IPython/testing/iptest.py IPython
+%endif
+
+%if %{with doc}
+PYTHONPATH=$(pwd) \
+%{__make} -C docs html \
+	SPHINXBUILD=sphinx-build-3
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %py3_install
 
-rm -rf $RPM_BUILD_ROOT%{_docdir}
+cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+# test suite
+%{__rm} $RPM_BUILD_ROOT%{_bindir}/iptest*
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/IPython/{testing,core/tests,extensions/tests,lib/tests,terminal/tests,utils/tests}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/i*.1*
+%attr(755,root,root) %{_bindir}/ipython
+%attr(755,root,root) %{_bindir}/ipython3
+%{_mandir}/man1/ipython.1*
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
-%doc docs/README.rst
-%{py3_sitescriptdir}/%{pname}
-%{py3_sitescriptdir}/*.egg-info
+%doc COPYING.rst README.rst
+%{py3_sitescriptdir}/IPython
+%{py3_sitescriptdir}/ipython-%{version}-py*.egg-info
+%{_examplesdir}/%{name}-%{version}
