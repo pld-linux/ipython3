@@ -7,7 +7,7 @@ Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
 Version:	5.8.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
@@ -177,7 +177,7 @@ cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # test suite
 %{__rm} $RPM_BUILD_ROOT%{_bindir}/iptest*
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/IPython/{testing,core/tests,extensions/tests,lib/tests,terminal/tests,utils/tests}
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/IPython/{core/tests,extensions/tests,lib/tests,terminal/tests,testing/tests,utils/tests}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
