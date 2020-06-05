@@ -6,44 +6,42 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	5.9.0
+Version:	7.15.0
 Release:	1
 License:	BSD
 Group:		Applications/Shells
-Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
-# Source0-md5:	9aae1bedd2d2f7761473085a4454f376
+Source0:	https://files.pythonhosted.org/packages/source/i/ipython/ipython-%{version}.tar.gz
+# Source0-md5:	a1ff2e556f354f6f6c86a2cff20c9314
 Patch0:		ipython-use-setuptools.patch
 URL:		http://ipython.org/
-BuildRequires:	pydoc3 >= 1:3.3
-BuildRequires:	python3-devel >= 1:3.3
-BuildRequires:	python3-devel-tools >= 1:3.3
+BuildRequires:	pydoc3 >= 1:3.6
+BuildRequires:	python3-devel >= 1:3.6
+BuildRequires:	python3-devel-tools >= 1:3.6
 BuildRequires:	python3-setuptools >= 18.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.747
 %if %{with tests}
+BuildRequires:	python3-backcall
 BuildRequires:	python3-decorator
 BuildRequires:	python3-ipykernel
+BuildRequires:	python3-jedi >= 0.10
 BuildRequires:	python3-nbformat
 BuildRequires:	python3-nose >= 0.10.1
-%if "%{py3_ver}" >= "3.4"
-BuildRequires:	python3-numpy
-%endif
-%if "%{py3_ver}" < "3.4"
-BuildRequires:	python3-pathlib2
-%endif
+BuildRequires:	python3-numpy >= 1.14
 BuildRequires:	python3-pexpect
 BuildRequires:	python3-pickleshare
-BuildRequires:	python3-prompt_toolkit >= 1.0.4
-BuildRequires:	python3-prompt_toolkit < 2
+BuildRequires:	python3-prompt_toolkit >= 3.0.2
+BuildRequires:	python3-prompt_toolkit < 3.1.0
 BuildRequires:	python3-pygments
 BuildRequires:	python3-requests
-BuildRequires:	python3-simplegeneric >= 0.8
 BuildRequires:	python3-testpath
 BuildRequires:	python3-traitlets >= 4.2
 %endif
 %if %{with doc}
+BuildRequires:	python3-docrepr
 BuildRequires:	python3-docutils
 BuildRequires:	python3-ipykernel
+BuildRequires:	python3-matplotlib
 BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	sphinx-pdg-3 >= 1.3
 %endif
@@ -197,7 +195,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
-%doc COPYING.rst README.rst
+%doc COPYING.rst LICENSE README.rst
 %{py3_sitescriptdir}/IPython
 %{py3_sitescriptdir}/ipython-%{version}-py*.egg-info
 %{_examplesdir}/%{name}-%{version}
