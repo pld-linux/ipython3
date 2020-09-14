@@ -6,12 +6,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	5.9.0
+Version:	5.10.0
 Release:	1
 License:	BSD
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
-# Source0-md5:	9aae1bedd2d2f7761473085a4454f376
+# Source0-md5:	eae7393ed47415709df3823422571a49
 Patch0:		ipython-use-setuptools.patch
 URL:		http://ipython.org/
 BuildRequires:	pydoc3 >= 1:3.3
@@ -35,7 +35,7 @@ BuildRequires:	python3-pexpect
 BuildRequires:	python3-pickleshare
 BuildRequires:	python3-prompt_toolkit >= 1.0.4
 BuildRequires:	python3-prompt_toolkit < 2
-BuildRequires:	python3-pygments
+BuildRequires:	python3-pygments < 2.6
 BuildRequires:	python3-requests
 BuildRequires:	python3-simplegeneric >= 0.8
 BuildRequires:	python3-testpath
