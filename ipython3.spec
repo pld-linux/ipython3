@@ -6,17 +6,17 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	7.15.0
+Version:	7.18.1
 Release:	1
 License:	BSD
 Group:		Applications/Shells
 Source0:	https://files.pythonhosted.org/packages/source/i/ipython/ipython-%{version}.tar.gz
-# Source0-md5:	a1ff2e556f354f6f6c86a2cff20c9314
+# Source0-md5:	f2db1158dc40d70a31b6bbef86e74789
 Patch0:		ipython-use-setuptools.patch
 URL:		http://ipython.org/
-BuildRequires:	pydoc3 >= 1:3.6
-BuildRequires:	python3-devel >= 1:3.6
-BuildRequires:	python3-devel-tools >= 1:3.6
+BuildRequires:	pydoc3 >= 1:3.7
+BuildRequires:	python3-devel >= 1:3.7
+BuildRequires:	python3-devel-tools >= 1:3.7
 BuildRequires:	python3-setuptools >= 18.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.747
@@ -28,7 +28,7 @@ BuildRequires:	python3-jedi >= 0.10
 BuildRequires:	python3-nbformat
 BuildRequires:	python3-nose >= 0.10.1
 BuildRequires:	python3-numpy >= 1.14
-BuildRequires:	python3-pexpect
+BuildRequires:	python3-pexpect > 4.3
 BuildRequires:	python3-pickleshare
 BuildRequires:	python3-prompt_toolkit >= 3.0.2
 BuildRequires:	python3-prompt_toolkit < 3.1.0
