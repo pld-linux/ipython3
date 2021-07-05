@@ -6,17 +6,17 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	5.10.0
-Release:	2
+Version:	7.25.0
+Release:	1
 License:	BSD
 Group:		Applications/Shells
 Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
-# Source0-md5:	eae7393ed47415709df3823422571a49
+# Source0-md5:	c83047b581398490b5d83129da73aa89
 Patch0:		ipython-use-setuptools.patch
 URL:		http://ipython.org/
-BuildRequires:	pydoc3 >= 1:3.3
-BuildRequires:	python3-devel >= 1:3.3
-BuildRequires:	python3-devel-tools >= 1:3.3
+BuildRequires:	pydoc3 >= 1:3.7
+BuildRequires:	python3-devel >= 1:3.7
+BuildRequires:	python3-devel-tools >= 1:3.7
 BuildRequires:	python3-setuptools >= 18.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.747
@@ -25,12 +25,7 @@ BuildRequires:	python3-decorator
 BuildRequires:	python3-ipykernel
 BuildRequires:	python3-nbformat
 BuildRequires:	python3-nose >= 0.10.1
-%if "%{py3_ver}" >= "3.4"
 BuildRequires:	python3-numpy
-%endif
-%if "%{py3_ver}" < "3.4"
-BuildRequires:	python3-pathlib2
-%endif
 BuildRequires:	python3-pexpect
 BuildRequires:	python3-pickleshare
 BuildRequires:	python3-prompt_toolkit >= 1.0.4
@@ -102,8 +97,8 @@ Pakiet ten zawiera powłokę IPython.
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
-Requires:	pydoc3 >= 1:3.3
-Requires:	python3-devel-tools >= 1:3.3
+Requires:	pydoc3 >= 1:3.7
+Requires:	python3-devel-tools >= 1:3.7
 
 %description -n python3-ipython
 IPython is a free software project which tries to:
