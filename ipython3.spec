@@ -21,24 +21,27 @@ BuildRequires:	python3-setuptools >= 18.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.747
 %if %{with tests}
+BuildRequires:	python3-backcall
 BuildRequires:	python3-decorator
 BuildRequires:	python3-ipykernel
+BuildRequires:	python3-jedi >= 0.10
 BuildRequires:	python3-nbformat
 BuildRequires:	python3-nose >= 0.10.1
-BuildRequires:	python3-numpy
-BuildRequires:	python3-pexpect
+BuildRequires:	python3-numpy >= 1.14
+BuildRequires:	python3-pexpect > 4.3
 BuildRequires:	python3-pickleshare
-BuildRequires:	python3-prompt_toolkit >= 1.0.4
-BuildRequires:	python3-prompt_toolkit < 2
-BuildRequires:	python3-pygments < 2.6
+BuildRequires:	python3-prompt_toolkit >= 3.0.2
+BuildRequires:	python3-prompt_toolkit < 3.1.0
+BuildRequires:	python3-pygments
 BuildRequires:	python3-requests
-BuildRequires:	python3-simplegeneric >= 0.8
 BuildRequires:	python3-testpath
 BuildRequires:	python3-traitlets >= 4.2
 %endif
 %if %{with doc}
+BuildRequires:	python3-docrepr
 BuildRequires:	python3-docutils
 BuildRequires:	python3-ipykernel
+BuildRequires:	python3-matplotlib
 BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	sphinx-pdg-3 >= 1.3
 %endif
@@ -192,7 +195,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python3-ipython
 %defattr(644,root,root,755)
-%doc COPYING.rst README.rst
+%doc COPYING.rst LICENSE README.rst
 %{py3_sitescriptdir}/IPython
 %{py3_sitescriptdir}/ipython-%{version}-py*.egg-info
 %{_examplesdir}/%{name}-%{version}
