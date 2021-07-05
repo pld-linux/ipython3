@@ -24,10 +24,11 @@ BuildRequires:	rpmbuild(macros) >= 1.747
 BuildRequires:	python3-backcall
 BuildRequires:	python3-decorator
 BuildRequires:	python3-ipykernel
-BuildRequires:	python3-jedi >= 0.10
+BuildRequires:	python3-jedi >= 0.16
+BuildRequires:	python3-matplotlib_inline
 BuildRequires:	python3-nbformat
 BuildRequires:	python3-nose >= 0.10.1
-BuildRequires:	python3-numpy >= 1.14
+BuildRequires:	python3-numpy >= 1.17
 BuildRequires:	python3-pexpect > 4.3
 BuildRequires:	python3-pickleshare
 BuildRequires:	python3-prompt_toolkit >= 3.0.2
@@ -148,6 +149,17 @@ w wielu przypadkach.
 
 Pakiet ten zawiera moduły interaktywnej powłoki języka Python.
 
+%package -n python3-ipython-apidocs
+Summary:	API documentation for Python IPython module
+Summary(pl.UTF-8):	Dokumentacja API modułu Pythona IPython
+Group:		Documentation
+
+%description -n python3-ipython-apidocs
+API documentation for Python IPython module.
+
+%description -n python3-ipython-apidocs -l pl.UTF-8
+Dokumentacja API modułu Pythona IPython.
+
 %prep
 %setup -q -n ipython-%{version}
 %patch0 -p1
@@ -199,3 +211,9 @@ rm -rf $RPM_BUILD_ROOT
 %{py3_sitescriptdir}/IPython
 %{py3_sitescriptdir}/ipython-%{version}-py*.egg-info
 %{_examplesdir}/%{name}-%{version}
+
+%if %{with doc}
+%files -n python3-ipython-apidocs
+%defattr(644,root,root,755)
+%doc docs/build/html/{_images,_static,about,api,config,coredev,development,install,interactive,parallel,whatsnew,*.html,*.js}
+%endif
