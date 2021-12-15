@@ -17,7 +17,7 @@ URL:		http://ipython.org/
 BuildRequires:	pydoc3 >= 1:3.7
 BuildRequires:	python3-devel >= 1:3.7
 BuildRequires:	python3-devel-tools >= 1:3.7
-BuildRequires:	python3-setuptools >= 18.5
+BuildRequires:	python3-setuptools >= 1:18.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.747
 %if %{with tests}
