@@ -162,7 +162,7 @@ Dokumentacja API modułu Pythona IPython.
 
 %prep
 %setup -q -n ipython-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python,%{__python},' \
 	examples/Embedding/embed_class_long.py \
