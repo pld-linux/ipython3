@@ -6,13 +6,12 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	7.25.0
-Release:	5
+Version:	9.1.0
+Release:	1
 License:	BSD
 Group:		Applications/Shells
-Source0:	http://archive.ipython.org/release/%{version}/ipython-%{version}.tar.gz
-# Source0-md5:	c83047b581398490b5d83129da73aa89
-Patch0:		ipython-use-setuptools.patch
+Source0:	https://files.pythonhosted.org/packages/source/i/ipython/ipython-%{version}.tar.gz
+# Source0-md5:	a66ff09570abcdd0a25b227f24342883
 URL:		http://ipython.org/
 BuildRequires:	pydoc3 >= 1:3.7
 BuildRequires:	python3-devel >= 1:3.7
@@ -162,7 +161,6 @@ Dokumentacja API modułu Pythona IPython.
 
 %prep
 %setup -q -n ipython-%{version}
-%patch -P0 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python,%{__python},' \
 	examples/Embedding/embed_class_long.py \
@@ -191,10 +189,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %py3_install
 
 cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
-# test suite
-%{__rm} $RPM_BUILD_ROOT%{_bindir}/iptest*
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/IPython/{core/tests,extensions/tests,lib/tests,terminal/tests,testing/tests,utils/tests}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
