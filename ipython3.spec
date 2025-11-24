@@ -6,44 +6,61 @@
 Summary:	An enhanced Interactive Python shell
 Summary(pl.UTF-8):	Interaktywna powłoka języka Python
 Name:		ipython3
-Version:	9.1.0
+Version:	9.7.0
 Release:	1
 License:	BSD
 Group:		Applications/Shells
+#Source0Download: https://pypi.org/simple/ipython/
 Source0:	https://files.pythonhosted.org/packages/source/i/ipython/ipython-%{version}.tar.gz
-# Source0-md5:	a66ff09570abcdd0a25b227f24342883
-URL:		http://ipython.org/
-BuildRequires:	pydoc3 >= 1:3.7
-BuildRequires:	python3-devel >= 1:3.7
-BuildRequires:	python3-devel-tools >= 1:3.7
-BuildRequires:	python3-setuptools >= 1:18.5
+# Source0-md5:	887aeb42be4a3a4e04e5b4009a227250
+URL:		https://ipython.org/
+BuildRequires:	pydoc3 >= 1:3.11
+BuildRequires:	python3-devel >= 1:3.11
+BuildRequires:	python3-devel-tools >= 1:3.11
+BuildRequires:	python3-setuptools >= 1:77.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.747
 %if %{with tests}
 BuildRequires:	python3-backcall
-BuildRequires:	python3-decorator
-BuildRequires:	python3-ipykernel
-BuildRequires:	python3-jedi >= 0.16
-BuildRequires:	python3-matplotlib_inline
-BuildRequires:	python3-nbformat
-BuildRequires:	python3-nose >= 0.10.1
-BuildRequires:	python3-numpy >= 1.17
+# optional (test_extra) as comments
+#BuildRequires:	python3-curio
+BuildRequires:	python3-decorator >= 4.3.2
+BuildRequires:	python3-ipykernel >= 6.30.1
+BuildRequires:	python3-ipython-pygments-lexers >= 1.0.0
+BuildRequires:	python3-jedi >= 0.18.1
+#BuildRequires:	python3-jupyter_ai
+#BuildRequires:	python3-matplotlib >= 3.9.1
+BuildRequires:	python3-matplotlib_inline >= 0.1.5
+#BuildRequires:	python3-nbclient
+#BuildRequires:	python3-nbformat
+BuildRequires:	python3-numpy >= 1.27
+BuildRequires:	python3-packaging >= 20.1.0
+#BuildRequires:	python3-pandas >= 2.1.1
 BuildRequires:	python3-pexpect > 4.3
-BuildRequires:	python3-pickleshare
-BuildRequires:	python3-prompt_toolkit >= 3.0.2
+BuildRequires:	python3-prompt_toolkit >= 3.0.41
 BuildRequires:	python3-prompt_toolkit < 3.1.0
-BuildRequires:	python3-pygments
+BuildRequires:	python3-pygments >= 2.11.0
+BuildRequires:	python3-pytest >= 7.0.0
+BuildRequires:	python3-pytest-asyncio >= 1.0.0
 BuildRequires:	python3-requests
-BuildRequires:	python3-testpath
-BuildRequires:	python3-traitlets >= 4.2
+BuildRequires:	python3-stack-data >= 0.6.0
+BuildRequires:	python3-testpath >= 0.2
+BuildRequires:	python3-traitlets >= 5.13.0
+#BuildRequires:	python3-trio >= 0.1.0
+%if "%{py3_ver}" == "3.11"
+BuildRequires:	python3-typing_extensions >= 4.6
+%endif
 %endif
 %if %{with doc}
 BuildRequires:	python3-docrepr
-BuildRequires:	python3-docutils
+BuildRequires:	python3-exceptiongroup
+BuildRequires:	python3-intersphinx_registry
 BuildRequires:	python3-ipykernel
 BuildRequires:	python3-matplotlib
-BuildRequires:	python3-sphinx_rtd_theme
-BuildRequires:	sphinx-pdg-3 >= 1.3
+BuildRequires:	python3-sphinx_rtd_theme >= 0.1.8
+BuildRequires:	python3-sphinx_toml >= 0.0.4
+BuildRequires:	python3-typing_extensions
+BuildRequires:	sphinx-pdg-3 >= 8.0
 %endif
 Requires:	python3-ipython = %{version}-%{release}
 Suggests:	python3-PyQt5
@@ -100,8 +117,8 @@ Pakiet ten zawiera powłokę IPython.
 Summary:	An enhanced Interactive Python shell modules
 Summary(pl.UTF-8):	Moduły interaktywnej powłoki języka Python
 Group:		Libraries/Python
-Requires:	pydoc3 >= 1:3.7
-Requires:	python3-devel-tools >= 1:3.7
+Requires:	pydoc3 >= 1:3.11
+Requires:	python3-devel-tools >= 1:3.11
 
 %description -n python3-ipython
 IPython is a free software project which tries to:
@@ -171,8 +188,9 @@ Dokumentacja API modułu Pythona IPython.
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 PYTHONPATH=$(pwd) \
-%{__python3} IPython/testing/iptest.py IPython
+%{__python3} -m pytest tests
 %endif
 
 %if %{with doc}
